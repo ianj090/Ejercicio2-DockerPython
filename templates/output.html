@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../static/estilos.css" rel = "stylesheet">
+  </head>
+   <body style="background-color:		#bdb76b">      
+      <!-- <form action = "http://localhost:5000/login" method = "post">
+         <p>Enter X & Y</p>
+         <p><input type = "text" name = "xvar" /></p>
+         <p><input type = "text" name = "yvar" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form> 
+      <form action = "http://localhost:5000/login" method = "post">
+         <p>Enter a restriction and hit enter</p>
+         <p><input type = "text" name = "xres" /></p>
+         <p><input type = "text" name = "yres" /></p>
+         <p><input type = "text" name = "ineq" /></p>
+         <p><input type = "text" name = "tot" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>        -->
+
+
+
+      <div class="container" style = "margin-left: 1%;" >
+         
+         <h1 class = 'heading'>Optimization</h1>
+         
+         
+            <h1 class = 'heading'>PRIMAL</h1>
+            
+           
+        <p>Number of Variables: {{ varAmountP }}</p>
+        <p>Number of Constraints: {{ cant_restP }}</p>
+        <p>Min or Max: {{ choiceP }}</p>
+        <p> Primal Matrix: </p>
+        {% for table in tablespi %}
+         {{ table|safe }}
+         {% endfor %}
+        <p>Inequalities: {{ ineq_primal }}</p>
+        
+        
+         <h1 class = 'heading'>DUAL</h1>
+        
+        
+        <p>Dual Number of Variables: {{ varAmountD }}</p>
+        <p>Dual Number of Constraints: {{ cant_restD }}</p>
+        <p>Dual Min or Max: {{ choiceD }}</p>
+        <p>Dual Matrix: </p>
+        {% for table in tablesdi %}
+         {{ table|safe }}
+         {% endfor %}
+        <p>Dual Inequalities: {{ ineq_dual }}</p>
+
+        <p>Primal Final Matrix: </p>
+        {% for table in tablesp %}
+         {{ table|safe }}
+         {% endfor %}
+        <p>Dual Final Matrix: </p>
+        {% for table in tablesd %}
+         {{ table|safe }}
+         {% endfor %}
+        <p>Optimal Solution: {{ solution }}</p> 
+        
+         <h1 class = 'heading'>Optimization with whole numbers</h1>
+        
+        
+        <p>Max X Value: {{ xVal }}</p>
+        <p>Max Y Value: {{ yVal }}</p>
+        <p>Optimal Solution: {{ solutionInt }}</p>
+      </div>
+
+
+   </body>
+</html>
+

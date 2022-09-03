@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../static/estilos.css" rel = "stylesheet">
+  </head>
+  <body style="background-color:	#bdb76b">     
+      <!-- <form action = "http://localhost:5000/login" method = "post">
+         <p>Enter X & Y</p>
+         <p><input type = "text" name = "xvar" /></p>
+         <p><input type = "text" name = "yvar" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form> 
+      <form action = "http://localhost:5000/login" method = "post">
+         <p>Enter a restriction and hit enter</p>
+         <p><input type = "text" name = "xres" /></p>
+         <p><input type = "text" name = "yres" /></p>
+         <p><input type = "text" name = "ineq" /></p>
+         <p><input type = "text" name = "tot" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>        -->
+
+
+
+      <div class="container">
+        
+        
+          <h1 class = 'heading'>Input Variables</h1>
+          
+        <form action = "http://localhost:5000/constraints" method = "post">
+          <div class="form-row">
+
+            <div class="form-group col-md-6">
+              <label for="xvar">X Coefficient</label>
+              <input type="text" class="form-control" id="xvar" name="xvar" placeholder="X Coefficient">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="yvar">Y Coefficient</label>
+              <input type="text" class="form-control" id="yvar" name="yvar" placeholder="Y Coefficient">
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="constAmount">Amount of Constraints</label>
+            <input type="text" class="form-control" id="constAmount" name="constAmount" placeholder="Amount of Constraints">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        {% if consts is defined and consts|length > 0 %}
+        
+          <h1 class = 'heading'>Input Constraints</h1>
+          
+          
+          <form action = "http://localhost:5000/output" method = "post">
+          {% for i in consts %}
+            <div class="row">
+              <div class="form-group col-lg-3">
+                <label for="xval">X Value</label>
+                <input type="text" class="form-control" id="xval" name="xval" placeholder="X Value">
+              </div>
+
+              <div class="form-group col-lg-3">
+                <label for="yval">Y Value</label>
+                <input type="text" class="form-control" id="yval" name="yval" placeholder="Y Value">
+              </div>
+
+              <div class="form-group col-lg-3">
+                <label for="inequality">Inequality</label>
+                <input type="text" class="form-control" id="inequality" name="inequality" placeholder="Inequality">
+              </div>
+
+              <div class="form-group col-lg-3">
+                <label for="total">Total</label>
+                <input type="text" class="form-control" id="total" name="total" placeholder="Total">
+              </div>
+
+            </div>
+          {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        {% endif %}
+      </div>
+
+
+   </body>
+</html>
+
