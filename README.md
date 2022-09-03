@@ -1,6 +1,8 @@
-# Ejercicio 2 Dockerfile con Python
+# Ejercicio 2 Dockerfile with Python
 
 Ian Jenatz 20190014
+
+The app utilized was a project for Linear Programming made with Fabricio Juárez.
 
 ## Steps
 
